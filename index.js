@@ -10,6 +10,10 @@ app.use(express.json());
 // เชื่อมต่อฐานข้อมูล
 connectDB();
 
+app.get("/", (req, res) => {
+    return res.status(200).send({ message: "Welcome to the Product API" });
+});
+
 // ดักฟัง request
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
